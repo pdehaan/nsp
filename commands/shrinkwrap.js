@@ -17,7 +17,6 @@ function usage(name, args) {
 };
  
 function shrinkwrap(args) {
-  //console.log('→ New issues'.green);
     var file = path.resolve(process.cwd(), 'npm-shrinkwrap.json');
     // Check if file exists
     fs.exists(file, function (exists) {
