@@ -1,32 +1,35 @@
 {
   "name": "nsp",
-  "version": "0.0.1",
   "description": "The Node Security Project",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
+  "version": "0.0.1",
+  "author": "Node Security Project",
+  "bin": "./bin/nsp-cli.js",
+  "bugs": "https://github.com/evilpacket/nsp/issues",
+  "dependencies": {
+    "async": "~0.2.10",
+    "cli-color": "^0.2.3",
+    "colors": "~0.6.2",
+    "minimist": "0.0.8",
+    "node-print": "0.0.4",
+    "npmlog": "0.0.6",
+    "optimist": "~0.6.0",
+    "osenv": "0.0.3",
+    "read": "~1.0.5",
+    "request": "~2.30.0",
+    "text-table": "^0.2.0"
   },
+  "devDependencies": {
+    "precommit-hook": "^0.3.10"
+  },
+  "homepage": "https://nodesecurity.io",
   "keywords": [
     "nsp",
     "security"
   ],
-  "author": "Node Security Project",
   "license": "MIT",
-  "bin": "./bin/nsp-cli.js",
-  "dependencies": {
-    "request": "~2.30.0",
-    "npmlog": "0.0.6",
-    "minimist": "0.0.8",
-    "optimist": "~0.6.0",
-    "colors": "~0.6.2",
-    "read": "~1.0.5",
-    "osenv": "0.0.3",
-    "node-print": "0.0.4",
-    "async": "~0.2.10",
-    "text-table": "^0.2.0",
-    "cli-color": "^0.2.3"
-  },
-  "devDependencies": {
-    "precommit-hook": "^0.3.10"
+  "main": "index.js",
+  "repository": "git@github.com:evilpacket/nsp.git",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
   }
 }
