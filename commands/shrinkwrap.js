@@ -33,6 +33,10 @@ function shrinkwrap(args) {
                 },
                 json: true
             }, function (err, response, body) {
+                if (err) {
+                    error('Something broke: ' + err);
+                }
+
                 if (body && body.length > 0) {
                     // Pretty output
                     var opts = {
