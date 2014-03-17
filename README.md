@@ -1,5 +1,8 @@
 # Node Security Project 
-## Command Line Tools
+**Command Line Tools**
+
+## Badgers
+[![Dependency Status](https://david-dm.org/nodesecurity/nsp.png)](https://david-dm.org/nodesecurity/nsp)
 
 ## Installation
 ```
