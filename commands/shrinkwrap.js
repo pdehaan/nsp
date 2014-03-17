@@ -3,6 +3,9 @@ var fs = require('fs');
 var path = require('path');
 var request = require('request');
 var log = require('npmlog');
+var table = require('text-table');
+var color = require('cli-color');
+var ansiTrim = require('cli-color/lib/trim');
 
 var error = require('../lib/error');
 
@@ -27,10 +30,31 @@ function shrinkwrap(args) {
                 method: 'post',
                 headers: {
                     'content-type': 'application/json'
-                }
+                },
+                json: true
             }, function (err, response, body) {
-                // review results
-                console.log(body);
+                if (body && body.length > 0) {
+                    // Pretty output
+                    var opts = {
+                        align: [ 'l', 'c', 'c', 'l' ],
+                        stringLength: function (s) { return ansiTrim(s).length; }
+                    };
+
+                    var h = [
+                        [
+                            color.underline('Name'), color.underline('Installed'), color.underline('Patched'), color.underline('Vulnerable Dependency')
+                        ]
+                    ];
+                    body.forEach(function (module) {
+                        h.push([module.module, module.version, module.advisory.patched_versions, module.dependencyOf.join(' > ')]);
+                    });
+                    var t = table(h, opts);
+                    console.error(t);
+                    process.exit(1);
+                } else {
+                    console.error(color.green("No vulnerable modules found"));
+                    process.exit(0);              
+                }
             }));
     });
 }
