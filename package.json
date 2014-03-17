@@ -1,0 +1,31 @@
+{
+  "name": "nsp",
+  "version": "0.0.1",
+  "description": "The Node Security Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "keywords": [
+    "nsp",
+    "security"
+  ],
+  "author": "Node Security Project",
+  "license": "MIT",
+  "bin": "./bin/nsp-cli.js",
+  "dependencies": {
+    "request": "^2.34.0",
+    "npmlog": "0.0.6",
+    "minimist": "0.0.8",
+    "optimist": "~0.6.0",
+    "colors": "~0.6.2",
+    "read": "~1.0.5",
+    "request": "~2.30.0",
+    "osenv": "0.0.3",
+    "node-print": "0.0.4",
+    "async": "~0.2.10"
+  },
+  "devDependencies": {
+    "precommit-hook": "^0.3.10"
+  }
+}
