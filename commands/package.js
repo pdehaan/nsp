@@ -62,25 +62,29 @@ function checkPackage(pkginfo, results, callback) {
         if (parents[module].indexOf(pkginfo.name) === -1) parents[module].push(pkginfo.name);
 
         registry.get(module, pkginfo.dependencies[module], function (er, data, raw, res) {
-            var ver = semver.maxSatisfying(Object.keys(data.versions), pkginfo.dependencies[module]);
-            validateModule(module, ver, function (result) {
-                if (result) {
-                    var d = {
-                        dependencyOf: resolveParents(module),
-                        module: module,
-                        version: ver,
-                        advisory: result[0]
-                    };
-                    results.push(d);
-                }
-                if (data.versions[ver].dependencies) {
-                    checkPackage(data.versions[ver], results, function () {
+            if (data && data.versions) {
+                var ver = semver.maxSatisfying(Object.keys(data.versions), pkginfo.dependencies[module]);
+                validateModule(module, ver, function (result) {
+                    if (result) {
+                        var d = {
+                            dependencyOf: resolveParents(module),
+                            module: module,
+                            version: ver,
+                            advisory: result[0]
+                        };
+                        results.push(d);
+                    }
+                    if (data.versions[ver].dependencies) {
+                        checkPackage(data.versions[ver], results, function () {
+                            cb();
+                        });
+                    } else {
                         cb();
-                    });
-                } else {
-                    cb();
-                }
-            });
+                    }
+                });
+            } else {
+                cb();
+            }
         });
     }, function (err) {
         callback(results);
@@ -106,7 +110,6 @@ function validateModule(module, version, cb) {
 }
 
 function prettyOutput(result) {
-    console.log(result);
     // Pretty output
     var opts = {
         align: [ 'l', 'c', 'c', 'l' ],
