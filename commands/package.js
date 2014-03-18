@@ -21,14 +21,14 @@ exports.usage = function usage(name, args) {
 
 
 var registry;
+var file = path.resolve(process.cwd(), 'package.json');
+var pkg = JSON.parse(fs.readFileSync(file));
  
 function package(args) {
-    var file = path.resolve(process.cwd(), 'package.json');
     if (fs.existsSync(file)) {
         npmconf.load(function (err, config) {
             registry = new RegClient(config);
-            var pkg = JSON.parse(fs.readFileSync(file));
-            checkPackage(pkg, [], prettyOutput);
+            checkPackage(pkg, undefined, prettyOutput);
         });
     } else {
         console.error(color.green("No vulnerable modules found"));
@@ -41,32 +41,39 @@ function package(args) {
 // Get versions
 // max satisfy
 // verify if it's vuln
+var parents = {};
+
+function resolveParents(module, current) {
+    current = current || [];
+    var parent = parents[module] && parents[module].length ? parents[module][0] : undefined;
+    if (parent && parent !== pkg.name && current.indexOf(parent) === -1) {
+        current.unshift(parent);
+        return resolveParents(parent, current);
+    }
+    return current;
+}
 
 function checkPackage(pkginfo, results, callback) {
     results = results || [];
 
     async.forEach(Object.keys(pkginfo.dependencies), function (module, cb) {
-        
+
+        parents[module] = parents[module] || [];
+        if (parents[module].indexOf(pkginfo.name) === -1) parents[module].push(pkginfo.name);
+
         registry.get(module, pkginfo.dependencies[module], function (er, data, raw, res) {
             var ver = semver.maxSatisfying(Object.keys(data.versions), pkginfo.dependencies[module]);
-            if (data.versions[ver].parent) {
-                data.versions[ver].parent.push(module);
-            } else {
-                data.versions[ver].parent = [module];
-            }
             validateModule(module, ver, function (result) {
                 if (result) {
                     var d = {
-                        dependencyOf: data.versions[ver].parent,
+                        dependencyOf: resolveParents(module),
                         module: module,
                         version: ver,
                         advisory: result[0]
                     };
                     results.push(d);
                 }
-                //console.log(data.versions[ver].dependencies)
                 if (data.versions[ver].dependencies) {
-                    console.log(data.versions[ver].parent);
                     checkPackage(data.versions[ver], results, function () {
                         cb();
                     });
