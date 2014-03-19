@@ -15,7 +15,10 @@
     "osenv": "0.0.3",
     "read": "~1.0.5",
     "request": "~2.34.0",
-    "text-table": "^0.2.0"
+    "text-table": "^0.2.0",
+    "npmconf": "^0.1.13",
+    "npm-registry-client": "^0.4.5",
+    "semver": "^2.2.1"
   },
   "devDependencies": {
     "precommit-hook": "^0.3.10"
