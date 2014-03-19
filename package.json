@@ -1,7 +1,7 @@
 {
   "name": "nsp",
   "description": "Node Security Project command line tools",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "author": "Node Security Project",
   "bin": "./bin/nsp-cli.js",
   "bugs": "https://github.com/nodesecurity/nsp/issues",
