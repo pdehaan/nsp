@@ -1,18 +1,23 @@
-var fs = require('fs');
+require('./audit');
+require('./hello');
 
-var files = fs.readdirSync(__dirname);
-files = files.filter(function (file) {
-    return file != 'index.js';
-});
+// var fs    = require('fs');
+// var async = require('async');
 
-var commands = files.map(function (file) {
-    return file.substring(0, file.lastIndexOf('.js'));
-});
+// var files    = fs.readdirSync(__dirname);
+// var commands = files.filter(function (file) {
+//     return file !== 'index.js';
+// });
 
-exports.list = function list() {
-    return commands;
-};
+// module.exports = function (cb) {
+//     async.each(commands, load, done);
 
-exports.module = function module(command) {
-    return require('./' + command);
-};
+//     function load(commandName) {
+//         console.log('requiring: ' + commandName);
+//         require('./' + commandName);
+//     }
+
+//     function done() {
+//         cb();
+//     }
+// };

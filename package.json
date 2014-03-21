@@ -6,9 +6,9 @@
   "bin": "./bin/nsp-cli.js",
   "bugs": "https://github.com/nodesecurity/nsp/issues",
   "dependencies": {
-    "async": "~0.2.10",
+    "async": "^0.2.10",
     "cli-color": "^0.2.3",
-    "colors": "~0.6.2",
+    "colors": "^0.6.2",
     "minimist": "0.0.8",
     "node-print": "0.0.4",
     "optimist": "~0.6.0",
@@ -18,7 +18,8 @@
     "text-table": "^0.2.0",
     "npmconf": "^0.1.13",
     "npm-registry-client": "^0.4.5",
-    "semver": "^2.2.1"
+    "semver": "^2.2.1",
+    "celeri": "git://github.com/diasdavid/celeri"
   },
   "devDependencies": {
     "precommit-hook": "^0.3.10"
