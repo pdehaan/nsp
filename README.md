@@ -18,7 +18,8 @@ cd nsp
 npm link
 ```
 
-## ```nsp shrinkwrap```
+
+## ```nsp audit-shrinkwrap```
 Takes an existing npm-shrinkwrap.json file and submits it for validation to nodesecurity.io
 
 Example:
@@ -28,3 +29,6 @@ Example:
 Name     Installed  Patched  Vulnerable Dependency
 connect    2.7.5    >=2.8.1  nodesecurity-jobs > kue > express
 ```
+
+## ```nsp audit-package```
+Takes an existing package.json file and submits it for validation to nodesecurity.io
