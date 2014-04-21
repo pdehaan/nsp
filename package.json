@@ -1,6 +1,6 @@
 {
   "name": "nsp",
-  "description": "Node Security Project command line tools",
+  "description": "Node Security Project command line tool",
   "version": "0.1.0",
   "author": "Node Security Project",
   "bin": "./bin/nsp-cli.js",

@@ -1,6 +1,9 @@
 # Node Security Project 
 ## Command Line Tools
 
+![](https://nodesecurity.io/img/nodesecurity.png)
+
+
 ## Installation
 
 Through NPM
