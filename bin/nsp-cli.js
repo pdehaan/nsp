@@ -3,5 +3,4 @@
 var celeri = require('celeri');
 require('./../commands');
 
-
 celeri.parse(process.argv);

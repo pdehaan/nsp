@@ -7,19 +7,20 @@
   "bugs": "https://github.com/nodesecurity/nsp/issues",
   "dependencies": {
     "async": "^0.2.10",
+    "celeri": "git://github.com/diasdavid/celeri",
     "cli-color": "^0.2.3",
     "colors": "^0.6.2",
     "minimist": "0.0.8",
     "node-print": "0.0.4",
+    "npm-registry-client": "^0.4.5",
+    "npmconf": "^0.1.13",
     "optimist": "~0.6.0",
     "osenv": "0.0.3",
     "read": "~1.0.5",
     "request": "~2.34.0",
-    "text-table": "^0.2.0",
-    "npmconf": "^0.1.13",
-    "npm-registry-client": "^0.4.5",
     "semver": "^2.2.1",
-    "celeri": "git://github.com/diasdavid/celeri"
+    "strscanner": "0.0.8",
+    "text-table": "^0.2.0"
   },
   "devDependencies": {
     "precommit-hook": "^0.3.10"
