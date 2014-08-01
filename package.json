@@ -1,7 +1,7 @@
 {
   "name": "nsp",
   "description": "Node Security Project command line tool",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Node Security Project",
   "bin": "./bin/nsp-cli.js",
   "bugs": "https://github.com/nodesecurity/nsp/issues",
@@ -28,11 +28,13 @@
   "homepage": "https://nodesecurity.io",
   "keywords": [
     "nsp",
-    "security"
+    "security",
+    "node",
+    "shrinkwrap"
   ],
   "license": "MIT",
   "main": "index.js",
-  "repository": "git@github.com:evilpacket/nsp.git",
+  "repository": "git@github.com:nodesecurity/nsp.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0"
   }
