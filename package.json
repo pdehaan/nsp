@@ -17,7 +17,7 @@
     "optimist": "~0.6.0",
     "osenv": "0.0.3",
     "read": "~1.0.5",
-    "request": "~2.34.0",
+    "request": "~2.40.0",
     "semver": "^2.2.1",
     "strscanner": "0.0.8",
     "text-table": "^0.2.0"
