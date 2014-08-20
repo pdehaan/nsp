@@ -3,7 +3,8 @@
   "description": "Node Security Project command line tool",
   "version": "0.2.0",
   "author": "Node Security Project",
-  "bin": "./bin/nsp-cli.js",
+  "main": "lib/nsp-stream.js",
+  "bin": "bin/nsp-cli.js",
   "bugs": "https://github.com/nodesecurity/nsp/issues",
   "dependencies": {
     "async": "^0.2.10",
