@@ -9,12 +9,12 @@
 
 ## Installation
 
-Through NPM
+Through npm:
 ```bash
 npm i nsp -g
 ```
 
-Through github
+Through GitHub:
 ```bash
 git clone git@github.com:nodesecurity/nsp.git
 cd nsp
@@ -22,24 +22,24 @@ npm link
 ```
 
 
-## ```nsp audit-shrinkwrap```
-Takes an existing npm-shrinkwrap.json file and submits it for validation to nodesecurity.io
+## `nsp audit-shrinkwrap`
+Takes an existing npm-shrinkwrap.json file and submits it for validation to [nodesecurity.io](https://nodesecurity.io/)
 
-Example:
+**Example:**
 
 ```bash
-~/nodesecurity/jobsystem $ nsp audit-shrinkwrap
+$ nsp audit-shrinkwrap
 Name     Installed  Patched  Vulnerable Dependency
 connect    2.7.5    >=2.8.1  nodesecurity-jobs > kue > express
 ```
 
-## ```nsp audit-package```
-Takes an existing package.json file and submits it for validation to nodesecurity.io
+## `nsp audit-package`
+Takes an existing package.json file and submits it for validation to [nodesecurity.io](https://nodesecurity.io/)
 
-Example:
+**Example:**
 
 ```bash
-~/nodesecurity/jobsystem $ nsp audit-package
+$ nsp audit-package
 Name     Installed  Patched  Vulnerable Dependency
 connect    2.7.5    >=2.8.1  nodesecurity-jobs > kue > express
 ```
