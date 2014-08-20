@@ -11,7 +11,7 @@
     "trailing": true,
     "eqeqeq": true,
     "undef": true,
-    "unused": true,
+    "unused": false,
     "node": true,
     "predef": [
         "$",
