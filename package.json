@@ -20,6 +20,7 @@
     "read": "~1.0.5",
     "request": "~2.40.0",
     "semver": "^2.2.1",
+    "silent-npm-registry-client": "0.0.0",
     "strscanner": "0.0.8",
     "text-table": "^0.2.0"
   },
