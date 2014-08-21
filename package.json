@@ -12,7 +12,6 @@
     "cli-color": "^0.3.2",
     "connect": "^2.7.5",
     "node-print": "0.0.4",
-    "npm-registry-client": "^3.1.1",
     "npmconf": "^1.1.5",
     "osenv": "^0.1.0",
     "request": "~2.40.0",
