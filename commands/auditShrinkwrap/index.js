@@ -1,4 +1,4 @@
-var celeri     = require('celeri');
+var celeri = require('celeri');
 var auditShrinkwrap = require('./../../lib/auditShrinkwrap');
 var table = require('text-table');
 var color = require('cli-color');
@@ -20,6 +20,10 @@ celeri.option({
 
 function action(data) {
     auditShrinkwrap(function (err, results) {
+        if (err) {
+            console.err(err);
+            process.exit(1);
+        }
 
         if (results && results.length > 0) {
             // Pretty output

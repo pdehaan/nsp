@@ -1,4 +1,4 @@
-var celeri  = require('celeri');
+var celeri = require('celeri');
 var auditPackage = require('./../../lib/auditPackage');
 var table = require('text-table');
 var color = require('cli-color');
@@ -21,7 +21,8 @@ celeri.option({
 function action(data) {
     auditPackage(function (err, results) {
         if (err) {
-            return console.log(err);
+            console.err(err);
+            process.exit(1);
         }
 
         // print results
