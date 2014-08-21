@@ -1,2 +1,2 @@
-require('./audit-package');
-require('./audit-shrinkwrap');
+require('./auditPackage');
+require('./auditShrinkwrap');
