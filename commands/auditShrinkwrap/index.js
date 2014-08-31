@@ -19,7 +19,7 @@ celeri.option({
 function action(data) {
     auditShrinkwrap(function (err, results) {
         if (err) {
-            console.err(err);
+            console.error(err);
             process.exit(1);
         }
 
